@@ -1,13 +1,192 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  direction: rtl;
+  /* max-width: 1000px; */
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+/* input form */
+
+.input-form{
+  max-width: 500px;
+  margin: 5rem auto;
+  padding: 3rem;
+  border-radius: 7px;
+  border: 1px solid rgba(207, 205, 205, 0.247);
+  box-shadow:5px 5px 50px rgb(77, 119, 119);
+  background-color: rgba(110, 71, 150, 0.856);
 }
+
+.input-form h2{
+  color: rgb(227, 233, 235);
+  /* margin-bottom: 2rem; */
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #9da6aa;
+}
+
+.input-form Label{
+  color: aliceblue;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.input-form Input{
+
+  height: 45px;
+  border-radius: 7px;
+  border: 2px solid #c7bdbd;
+}
+
+.input-form Button{
+  border: none;
+  background-color: rgba(44, 7, 80, 0.822);
+  padding: 0.5rem 3rem;
+  margin-top: 1.5rem;
+  
+}
+
+.input-form Button:hover{
+  background-color: rgba(228, 222, 235, 0.822);
+  color: rgba(44, 7, 80, 0.822);
+  font-weight: bold;
+}
+
+.input-form Button:focus{
+  background-color: rgba(228, 222, 235, 0.822);
+  color: rgba(44, 7, 80, 0.822);
+  font-weight: bold;
+}
+
+/* dashboard */
+
+/* navbar */
+
+.navbar{
+  padding: 5rem 0;
+   margin:1rem 3rem;
+   border-radius: 7px;
+   color: #f9fdff;
+   background-color:rgba(44, 7, 80, 0.822) ;
+ }
+ 
+ .navbar button{
+   border: none;
+   background-color: rgba(240, 248, 255, 0);
+ }
+ 
+ .navbar button:hover{
+   border-bottom: 1px solid aquamarine;
+   background-color: rgba(255, 255, 255, 0);
+ }
+
+ /* profile */
+
+.dashboard-form  {
+  padding: 2rem 1rem;
+  /* border:3px solid black; */
+  border-radius: 7px;
+  margin: 3rem;
+  background-color: rgba(114, 72, 155, 0.726);
+}
+
+.dashboard-form h1{
+  margin: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #9da6aa;
+  color: rgb(245, 243, 247);
+
+
+}
+
+.dashboard-form .form-group{
+  margin-top: 1rem;
+}
+
+
+.form-group .gender-input{
+  color: #f9fdff;
+  background-color: rgba(68, 33, 105, 0.788);
+  border: none;
+}
+
+.form-group .gender-input:focus{
+  color: #fff;
+  background-color: rgba(68, 33, 105, 0.788);
+}
+
+.DatePicker{
+  /* margin-top: 0.2rem; */
+  /* display: block; */
+  width: 100%;
+
+}
+
+.DatePicker input{
+  /* padding: 0 4rem; */
+  width: 100%;
+  height: 2.1rem;
+  border-radius: 5px;
+}
+
+.form-group input{
+  color: #f9fdff;
+  background-color: rgba(68, 33, 105, 0.788);
+  border: none;
+}
+
+.form-group input:focus{
+  background-color: rgba(68, 33, 105, 0.788);
+  color: #fff;
+}
+
+.form-group label{
+  display: block;
+  margin-bottom: 1rem;
+  color: azure;
+  font-weight: bold;
+}
+
+.form-group button{
+  margin-top: 2rem;
+  background-color: rgba(44, 7, 80, 0.822);
+  padding: 0.5rem 2rem;
+}
+.form-group button:hover{
+  background-color: rgba(228, 222, 235, 0.822);
+  color: rgba(44, 7, 80, 0.822);
+}
+
+/* modal */
+
+
+.modal-btn button{
+  background-color: rgba(44, 7, 80, 0.822);
+  padding: 0.3rem 2rem;
+}
+
+.modal{
+  background-color: rgba(7, 69, 80, 0.466);
+}
+
+.modal-btn button:hover{
+  background-color: rgba(228, 222, 235, 0.822);
+  color: rgba(44, 7, 80, 0.822);
+
+}
+
+
+
+/* error */
+
+.error{
+  font-size: 80%;
+  border-radius: 10px;
+  width: 80%;
+  padding: 0.5rem;
+  background-color: rgba(206, 57, 57, 0.801);
+  color: #f9fdff;
+}
+
