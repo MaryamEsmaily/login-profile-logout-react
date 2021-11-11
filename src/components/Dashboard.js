@@ -4,6 +4,7 @@ import { convertDateToObj, convertObjToData } from "../util/date";
 import customAxios from "../config/customAxios";
 import * as yup from "yup";
 import { useFormik } from "formik";
+import { useHistory } from "react-router";
 import {
   Col,
   Row,
@@ -48,6 +49,8 @@ const initialValues = {
 };
 
 function Dashboard() {
+  const history = useHistory();
+
   const auth = useSelector((state) => state.auth);
   const [smsCode, setSmsCode] = useState("");
 
@@ -144,12 +147,17 @@ function Dashboard() {
 
   return (
     <>
-      <nav className="navbar">
+      {/* <nav className="navbar">
         <h6>{auth.name} خوش آمدید.</h6>
         <a href="">
           <Button onClick={() => dispatch(logout())}>خروج</Button>
         </a>
-      </nav>
+        <a href="">
+          <Button type="submit" onClick={() => history.push("/Wallet")}>
+            کیف پول
+          </Button>
+        </a>
+      </nav> */}
       <Form onSubmit={formik.handleSubmit} className="dashboard-form">
         <Container>
           <h1>پروفایل</h1>

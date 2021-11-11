@@ -64,23 +64,27 @@
 
 /* navbar */
 
-.navbar{
-  padding: 5rem 0;
-   margin:1rem 3rem;
+.Navbar{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.7rem 0;
+   margin:2rem 3rem;
    border-radius: 7px;
    color: #f9fdff;
    background-color:rgba(44, 7, 80, 0.822) ;
  }
  
- .navbar button{
+ .Navbar button{
    border: none;
    background-color: rgba(240, 248, 255, 0);
  }
  
- .navbar button:hover{
+ .Navbar button:hover{
    border-bottom: 1px solid aquamarine;
    background-color: rgba(255, 255, 255, 0);
  }
+
+
 
  /* profile */
 
@@ -175,6 +179,29 @@
   background-color: rgba(228, 222, 235, 0.822);
   color: rgba(44, 7, 80, 0.822);
 
+}
+/* table */
+
+.table-items{
+  padding: 2rem 1rem;
+  /* border:3px solid black; */
+  border-radius: 7px;
+  margin: 3rem;
+  background-color: rgba(114, 72, 155, 0.726);
+
+
+}
+
+.table-items h1{
+  margin: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #9da6aa;
+  color: rgb(245, 243, 247);
+}
+.table-items Table{
+  
+  font-weight: bold;
+  color: #f9fdff;
 }
 
 
