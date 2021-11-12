@@ -1,6 +1,5 @@
 *{
   direction: rtl;
-  /* max-width: 1000px; */
   margin: 0 auto;
   text-align: center;
   box-sizing: border-box;
@@ -22,7 +21,6 @@
 
 .input-form h2{
   color: rgb(227, 233, 235);
-  /* margin-bottom: 2rem; */
   padding-bottom: 2rem;
   border-bottom: 2px solid #9da6aa;
 }
@@ -60,7 +58,6 @@
   font-weight: bold;
 }
 
-/* dashboard */
 
 /* navbar */
 
@@ -90,7 +87,6 @@
 
 .dashboard-form  {
   padding: 2rem 1rem;
-  /* border:3px solid black; */
   border-radius: 7px;
   margin: 3rem;
   background-color: rgba(114, 72, 155, 0.726);
@@ -122,14 +118,11 @@
 }
 
 .DatePicker{
-  /* margin-top: 0.2rem; */
-  /* display: block; */
   width: 100%;
 
 }
 
 .DatePicker input{
-  /* padding: 0 4rem; */
   width: 100%;
   height: 2.1rem;
   border-radius: 5px;
@@ -184,7 +177,6 @@
 
 .table-items{
   padding: 2rem 1rem;
-  /* border:3px solid black; */
   border-radius: 7px;
   margin: 3rem;
   background-color: rgba(114, 72, 155, 0.726);

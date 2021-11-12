@@ -23,7 +23,7 @@ function Wallet() {
   const { data, isLoading, isError, isFetching } = useWallet();
 
   if (isFetching) {
-    return "hiiiiih";
+    return "در حال واکشی...";
   }
 
   if (isLoading) {
@@ -54,43 +54,31 @@ function Wallet() {
   ];
 
   return (
-    <>
-      {/* <nav className="navbar">
-        <a href="">
-          <Button onClick={() => dispatch(logout())}>خروج</Button>
-        </a>
-        <a href="">
-          <Button type="submit" onClick={() => history.push("Dashboard")}>
-            داشبورد
-          </Button>
-        </a>
-      </nav> */}
-      <div className="table-items">
-        <h1>کیف پول</h1>
-        <Table bordered className="Table ">
-          <thead>
-            <tr>
-              {col.map((item) => (
-                <th key={item.key}>{item.title}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {data?.map((items) => {
-              return (
-                <tr key={items.ID}>
-                  {col.map((item) => (
-                    <td key={item.key}>
-                      {item?.render ? item?.render(items) : items[item?.key]}
-                    </td>
-                  ))}
-                </tr>
-              );
-            })}
-          </tbody>
-        </Table>
-      </div>
-    </>
+    <div className="table-items">
+      <h1>کیف پول</h1>
+      <Table bordered className="Table ">
+        <thead>
+          <tr>
+            {col.map((item) => (
+              <th key={item.key}>{item.title}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {data?.map((items) => {
+            return (
+              <tr key={items.ID}>
+                {col.map((item) => (
+                  <td key={item.key}>
+                    {item?.render ? item?.render(items) : items[item?.key]}
+                  </td>
+                ))}
+              </tr>
+            );
+          })}
+        </tbody>
+      </Table>
+    </div>
   );
 }
 
