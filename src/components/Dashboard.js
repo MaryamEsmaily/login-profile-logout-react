@@ -4,7 +4,6 @@ import { convertDateToObj, convertObjToData } from "../util/date";
 import customAxios from "../config/customAxios";
 import * as yup from "yup";
 import { useFormik } from "formik";
-import { useHistory } from "react-router";
 import {
   Col,
   Row,
@@ -16,8 +15,16 @@ import {
   Container,
 } from "reactstrap";
 import { Modal } from "react-bootstrap";
-import { logout } from "../store/slice/authSlice";
-import { useDispatch, useSelector } from "react-redux";
+
+const formSchema = yup.object().shape({
+  firstName: yup.string().required("نام ضروری است."),
+  lastName: yup.string().required("نام خانوادگی ضروری است."),
+  fatherName: yup.string().required("نام پدر ضروری است."),
+  gender: yup.string().required("جنسیت ضروری است."),
+  nationalCode: yup.string().required("کد ملی معتبر نمی باشد."),
+  // brithDate:  ,
+  phone: yup.string().required("تلفن منزل ضروری است."),
+});
 
 const field = {
   mobileNumber: "MobileNumber",
@@ -49,16 +56,11 @@ const initialValues = {
 };
 
 function Dashboard() {
-  const history = useHistory();
-
-  const auth = useSelector((state) => state.auth);
   const [smsCode, setSmsCode] = useState("");
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     handleGetData();
@@ -80,19 +82,9 @@ function Dashboard() {
 
   const formik = useFormik({
     initialValues,
+    validationSchema: formSchema,
     onSubmit: handleSubmit,
-
-    validationSchema: yup.object({
-      firstName: yup.string().required("نام ضروری است."),
-      lastName: yup.string().required("نام خانوادگی ضروری است."),
-      fatherName: yup.string().required("نام پدر ضروری است."),
-      gender: yup.string().required("جنسیت ضروری است."),
-      nationalCode: yup.string().required("کد ملی معتبر نمی باشد."),
-      // brithDate:  ,
-      phone: yup.string().required("تلفن منزل ضروری است."),
-    }),
   });
-  // console.log(Object.entries(field));
 
   const handleConfirm = (values) => {
     const data = {
@@ -147,17 +139,6 @@ function Dashboard() {
 
   return (
     <>
-      {/* <nav className="navbar">
-        <h6>{auth.name} خوش آمدید.</h6>
-        <a href="">
-          <Button onClick={() => dispatch(logout())}>خروج</Button>
-        </a>
-        <a href="">
-          <Button type="submit" onClick={() => history.push("/Wallet")}>
-            کیف پول
-          </Button>
-        </a>
-      </nav> */}
       <Form onSubmit={formik.handleSubmit} className="dashboard-form">
         <Container>
           <h1>پروفایل</h1>

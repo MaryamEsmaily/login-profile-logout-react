@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@200;400&display=swap');
+
 *{
   direction: rtl;
   margin: 0 auto;
   text-align: center;
   box-sizing: border-box;
+  font-family: 'Noto Sans Arabic', sans-serif;
 }
-
-
 
 /* input form */
 
@@ -20,6 +22,7 @@
 }
 
 .input-form h2{
+  font-family: 'Lalezar', cursive;
   color: rgb(227, 233, 235);
   padding-bottom: 2rem;
   border-bottom: 2px solid #9da6aa;
@@ -32,10 +35,9 @@
 }
 
 .input-form Input{
-
   height: 45px;
   border-radius: 7px;
-  border: 2px solid #c7bdbd;
+  border-bottom: 2px solid #c7bdbd;
 }
 
 .input-form Button{
@@ -62,6 +64,7 @@
 /* navbar */
 
 .Navbar{
+
   display: flex;
   justify-content: space-evenly;
   padding: 0.7rem 0;
@@ -72,6 +75,8 @@
  }
  
  .Navbar button{
+   font-family: 'Lalezar', cursive;
+   font-size: 1.2rem;
    border: none;
    background-color: rgba(240, 248, 255, 0);
  }
@@ -86,19 +91,18 @@
  /* profile */
 
 .dashboard-form  {
-  padding: 2rem 1rem;
+  padding: 3rem 1rem 5rem 1rem;
   border-radius: 7px;
-  margin: 3rem;
-  background-color: rgba(114, 72, 155, 0.726);
+  margin: 2rem;
+  background-color: rgba(253, 253, 253, 0.726);
 }
 
 .dashboard-form h1{
+  font-family: 'Lalezar', cursive;
   margin: 2rem;
   padding-bottom: 2rem;
-  border-bottom: 2px solid #9da6aa;
-  color: rgb(245, 243, 247);
-
-
+  border-bottom: 2px solid #3f4344;
+  color: rgb(28, 5, 36);
 }
 
 .dashboard-form .form-group{
@@ -107,43 +111,48 @@
 
 
 .form-group .gender-input{
-  color: #f9fdff;
-  background-color: rgba(68, 33, 105, 0.788);
   border: none;
+  color: #1f042e;
+  border-bottom: 2px solid rgb(91, 33, 105);
+  background-color: rgba(253, 253, 253, 0);
+  font-size: 1.2rem;
+  border-radius: 0;
 }
 
-.form-group .gender-input:focus{
-  color: #fff;
-  background-color: rgba(68, 33, 105, 0.788);
-}
+
 
 .DatePicker{
   width: 100%;
-
 }
 
 .DatePicker input{
+  font-size: 1.2rem;
+  color: #1f042e;
   width: 100%;
   height: 2.1rem;
-  border-radius: 5px;
 }
 
 .form-group input{
-  color: #f9fdff;
-  background-color: rgba(68, 33, 105, 0.788);
+  font-size: 1.2rem;
+  border-radius: 0;
+  background-color: rgba(253, 253, 253, 0);
+  color: #1f042e;
   border: none;
+  border-bottom: 2px solid rgb(91, 33, 105);
+
+
 }
 
 .form-group input:focus{
-  background-color: rgba(68, 33, 105, 0.788);
-  color: #fff;
+  background-color: rgba(253, 253, 253, 0);
 }
 
 .form-group label{
+  text-align: right;
   display: block;
-  margin-bottom: 1rem;
-  color: azure;
-  font-weight: bold;
+  color: rgb(28, 5, 36);
+  /* font-size: 20px; */
+  margin: 1.2rem 0;
 }
 
 .form-group button{
@@ -178,22 +187,48 @@
 .table-items{
   padding: 2rem 1rem;
   border-radius: 7px;
-  margin: 3rem;
-  background-color: rgba(114, 72, 155, 0.726);
-
-
+  margin: 2rem;
+  background-color: rgba(253, 253, 253, 0.726);
+  overflow-x: scroll;
 }
 
 .table-items h1{
-  margin: 2rem;
+  font-family: 'Lalezar', cursive;
+  margin: 3rem;
   padding-bottom: 2rem;
-  border-bottom: 2px solid #9da6aa;
-  color: rgb(245, 243, 247);
+  border-bottom: 2px solid #3f4344;
+  color: rgb(28, 5, 36);
 }
+
 .table-items Table{
-  
-  font-weight: bold;
-  color: #f9fdff;
+  border-collapse: collapse;
+  margin: 25px 0;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.table-items Table thead tr {
+  font-size: 1.2rem;
+  background-color: #28073dd2;
+  color: #ffffff;
+  text-align: center;
+}
+
+.table-items Table th,
+.table-items Table td {
+    padding: 12px 15px;
+}
+
+.table-items Table tbody tr {
+  border-bottom: 1px solid #b376af;
+}
+
+.table-items Table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.table-items Table tbody tr:last-of-type {
+  border-bottom: 2px solid #2c0227;
 }
 
 

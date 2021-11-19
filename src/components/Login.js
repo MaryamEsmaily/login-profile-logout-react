@@ -1,11 +1,19 @@
 import { useHistory } from "react-router";
-import { Button, Col, Row, Input, Container, Form } from "reactstrap";
+import { Button, Col, Row, Input, Container } from "reactstrap";
 import customAxios from "../config/customAxios";
 import * as yup from "yup";
-import { useFormik } from "formik";
+import { Formik, Form } from "formik";
 import { useDispatch } from "react-redux";
 import { setData } from "../store/slice/authSlice";
 import { toast } from "react-toastify";
+
+const formSchema = yup.object().shape({
+  mobileNumber: yup
+    .number()
+    .typeError("ورودی باید عدد باشد.")
+    .required("وارد کردن شماره موبایل ضروری است."),
+  password: yup.string().required("وارد کردن رمزعبور ضروری است."),
+});
 
 const initialValues = {
   mobileNumber: "",
@@ -39,61 +47,65 @@ function Login() {
       });
   };
 
-  const formik = useFormik({
-    initialValues,
-    onSubmit: handleSubmit,
-    validationSchema: yup.object({
-      mobileNumber: yup
-        .number()
-        .typeError("ورودی باید عدد باشد.")
-        .required("وارد کردن شماره موبایل ضروری است."),
-      password: yup.string().required("وارد کردن رمزعبور ضروری است."),
-    }),
-  });
   return (
-    <Form onSubmit={formik.handleSubmit} className="input-form">
-      <Container>
-        <h2>ورود</h2>
-        <Row>
-          <Col>
-            <label>شماره موبایل</label>
-            <Input
-              name="mobileNumber"
-              type="text"
-              placeholder="شماره موبایل"
-              value={formik.values.mobileNumber}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {formik.touched.mobileNumber && formik.errors.mobileNumber ? (
-              <div className="error">{formik.errors.mobileNumber}</div>
-            ) : null}
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <label>رمز عبور</label>
-            <Input
-              name="password"
-              type="password"
-              placeholder="رمزعبور"
-              value={formik.values.password}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {formik.touched.password && formik.errors.password ? (
-              <div className="error">{formik.errors.password}</div>
-            ) : null}
-          </Col>
-        </Row>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={formSchema}
+      onSubmit={handleSubmit}
+    >
+      {({
+        errors,
+        touched,
+        values,
+        handleChange,
+        handleSubmit,
+        handleBlur,
+      }) => (
+        <Form onSubmit={handleSubmit} className="input-form">
+          <Container>
+            <h2>ورود</h2>
+            <Row>
+              <Col>
+                <label>شماره موبایل</label>
+                <Input
+                  name="mobileNumber"
+                  type="text"
+                  placeholder="شماره موبایل"
+                  value={values.mobileNumber}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {touched.mobileNumber && errors.mobileNumber ? (
+                  <div className="error">{errors.mobileNumber}</div>
+                ) : null}
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <label>رمز عبور</label>
+                <Input
+                  name="password"
+                  type="password"
+                  placeholder="رمزعبور"
+                  value={values.password}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {touched.password && errors.password ? (
+                  <div className="error">{errors.password}</div>
+                ) : null}
+              </Col>
+            </Row>
 
-        <Col md={12}>
-          <Button type="submit" color="primary">
-            ورود
-          </Button>
-        </Col>
-      </Container>
-    </Form>
+            <Col md={12}>
+              <Button type="submit" color="primary">
+                ورود
+              </Button>
+            </Col>
+          </Container>
+        </Form>
+      )}
+    </Formik>
   );
 }
 

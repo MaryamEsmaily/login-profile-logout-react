@@ -1,13 +1,7 @@
 import React from "react";
 import customAxios from "../config/customAxios";
-import { useEffect, useState } from "react";
 import { Table } from "reactstrap";
 import { useQuery } from "react-query";
-import { Button } from "reactstrap";
-import { logout } from "../store/slice/authSlice";
-import { useHistory } from "react-router";
-
-import { useDispatch } from "react-redux";
 
 function useWallet() {
   return useQuery("Wallet", async () => {
@@ -17,9 +11,6 @@ function useWallet() {
 }
 
 function Wallet() {
-  const dispatch = useDispatch();
-  const history = useHistory();
-
   const { data, isLoading, isError, isFetching } = useWallet();
 
   if (isFetching) {
